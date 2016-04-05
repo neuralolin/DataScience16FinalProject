@@ -3,7 +3,7 @@ layout:     post
 title:      "Project Story One"
 subtitle:   "A Bird in the Hand may not be Worth Two in the Bush"
 date:       2016-04-04
-author:     "David, Patrick, Philip"
+author:     "David, Patrick, and Philip"
 header-img: "img/post-bg-01.jpg"
 ---
 

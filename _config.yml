@@ -1,15 +1,10 @@
 # Site settings
 title: Neural Olin
 header-img: img/home-bg.jpg
-email: your-email@yourdomain.com
-copyright_name: Your/Project/Corporate Name
-description: ""
+description: "Olin Data Science 2016 Final Project exploration into neural networks"
 baseurl: "/DataScience16FinalProject"
 url: "http://neuralolin.github.io"
-twitter_username: SBootstrap
-github_username:  davidtmiller
-facebook_username:  IronSummitMedia
-email_username:  your-email@yourdomain.com
+github_username:  neuralolin
 
 # Build settings
 markdown: kramdown

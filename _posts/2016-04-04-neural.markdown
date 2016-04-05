@@ -7,4 +7,4 @@ author:     "David, Patrick, and Philip"
 header-img: "img/post-bg-02.jpg"
 ---
 
-<h2>Content still a work in progress</h2>
+## Content still a work in progress

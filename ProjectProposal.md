@@ -1,29 +1,24 @@
 # Project Proposal
-## Team Twitter Science Data Squad (WIP)
+## Team Neural Olin
 
 #### *Who is on the team?*
 David Abrahams, Patrick Huston, Philip Seger
 
 #### *In a couple of paragraphs, describe the key ideas of your proposed project?  What is your MVP?  What are your stretch goals?*
 
-The main idea behind our project is looking into the giant complex system that is the stock market. There are huge amounts of available data on individual companies, with very specific granularity, for long periods of time, so the idea of looking into the stock market and utilizing it as our dataset was quite interesting. However, the stock market as a whole is too complex to evaluate, along with the fact that it is near impossible to build predictions on a specific company without also looking to external sources. For that reason, we are planning on looking into the stock market with relation to popular opinion from Twitter. Our main question we plan on figuring out is how good of an indicator public opinion is in relation to stock data, and how the public’s feelings for a given day (calm, angry, happy, etc.) relate back to how well the market may be doing. For this question, we want to build visualizations that correlate the data and show trends from historical Twitter data and historical stock market data.
-
-It is worth mentioning that single Tweets can provide very little information to us. For one, there is a lot of randomness Tweeted about. Along with that, a Tweet is 140 characters, which would be difficult to properly clean for a dataset. As such, we plan on using sentiment analysis for Tweets to be able to gather whether they are positive or negative. From this, we can assign a value for each Tweet and build a usable dataset. Then, we will compare this information to gathered data for the stock market around the similar timeframe. As such, the MVP for this project would be a system to compared Twitter data to data from the stock market, which we could then build visualizations from. A possible stretch goal we have thought about is looking into building a model that could use real-time Twitter data and market data to predict whether a specific stock (or the market as a whole) will be positive or negative for the day.
+Our initial idea was to look into Twitter and stock market data relations, using time-series reflection and sentiment analysis. However, there was quite a lot of noise (for both datasets), so we decided that it might be more interesting to try something else. This something else is neural networks. We want to spend time looking into the algorithms behind it, learning some of the logic. Along with that, we would like to come up with some implementation of one, to show our understanding. Along with that, we want to end by implementing with a dataset of some variety, to see how successful we may have been or see what might happen. This last bit will most likely include time-series exploration, as we were interested in that with the previous Twitter project idea.
 
 #### *To the best of your current knowledge, what datasets will you use for your project?  Are there any obstacles you foresee in terms of getting access to the data?*
 
-We plan on utilizing two main sources of data during the course of this project:
-
-1. Historical Twitter Data. This may end up being more difficult than initially conceived, however we have backup plans to implement a utility to start amassing our own dataset autonomously. 
-2. Historical stock market data. This is easily accessible to the public and exposed by convenient APIs provided by CNN money and Yahoo! Finance, to name a few. We foresee few troubles in this area. 
+We plan on not starting by looking into a dataset, but more so looking into how neural network algorithms work in Python. We eventually plan on implementing along a time-series dataset, but are not sure about what specific dataset we are going to look into. 
 
 #### *What are the most important new skills / techniques you will have to learn to be successful in this project?  If you think some of these skills would be useful for us to cover in class, please indicate which ones.*
 
 In the course of this project, we will have to learn several key skills:
 
-1. Working with a potentially huge dataset. We haven’t done this before, and will have to navigate our way through some expected troubles we may encounter. Along with just being able to store a huge amount of data, we also need to figure out clever ways to clean it so that it can be used effectively. 
-2. Being creative with accessing difficult-to-retrieve data from sources like Twitter. Our worst case scenario, where we are unable to get historical Twitter data, will involve gathering our own Twitter dataset, which will be done as soon as possible if needed.
-3. Working more with the statistical side of the datasets. The papers we have read point out that there is a correlation between Twitter and stock data, however we want to jump in and see if we can make our own conclusions.
+1. Learning from papers and publications. Neural networks include quite a bit of math, so we are going to have to learn a lot of that side of things.
+
+2. Practice implementations and learn as we go. This is a completely new area for all of us, and involves thinking not just about the code but more about what the code is doing multiple recursions down, so we are going to be doing a lot of trying new things.
 
 #### *Outline a rough timeline for the major milestones of your project.  This will mainly be useful to refer back to as we move through the project.*
 
@@ -33,19 +28,19 @@ In the course of this project, we will have to learn several key skills:
 
 3/29 - Have an example dataset, begin cleaning (continue collecting data if needed)
 
-4/1 - Cleaned, usable stock dataset, along with Twitter dataset to playtest with, if possible
+4/1 - Pivot to neural networks
 
-4/5 - Have started exploring visualizations surrounding stock and Twitter relation
+4/5 - Working on learning how a neural network works/is implemented
 
-4/8 - Show one example visualization
+4/8 - Implementing and working on our neural network
 
-4/12 - Begin model development
+4/12 - Continued development
 
 4/15 - CODE REVIEW
 
-4/19 - Continue model development, continue visualization development
+4/19 - Look into possible datasets to explore
 
-4/22 - Begin development of medium to show data to others
+4/22 - Continue learning/implementing net and exploring datasets
 
 4/26 - Continue everything
 
@@ -57,9 +52,9 @@ In the course of this project, we will have to learn several key skills:
 
 #### *What do you view as the biggest risks to you being successful on this project?*
 
-The biggest obstacle would likely be the fact that we may be scraping our own data, continuously. Getting a workable dataset that is both useful to what we are looking into and contains enough information is going to be tough, so we need to figure out the best course of action that will get us the most useful information.
+The biggest obstacle would likely be the fact that we have little idea of what we are doing going into this. Neural networks are a popular topic now however, which helps in that there is a ton of documentation and information to guide us. It will still be difficult, and will require a lot of reading and study.
 
-#### *Given each of your YOGAs (see here), in what ways is this project well-aligned with these goals, and in what ways is it misaligned?  If there are ways in which it is not well-aligned, please provide a potential strategy for bringing the project and your learning goals into better alignment.*
+#### *Given each of your YOGAs (see here), in what ways is this project well-aligned with these goals, and in what ways is it misaligned?  If there are ways in which it is not well-aligned, please provide a potential strategy for bringing the project and your learning goals into better alignment.* (Might be outdated because of pivot.)
 ##### Patrick
 
 This project seems to align very well with my goals. My primary goal is to spend more time looking at outside research papers and contributions made from the community, which is well-aligned with this project in particular. There’s a lot of prior research that has been done in this space, and I’ve already found some great papers that have been just challenging enough such that I can gain a lot from them with some investment of time. Additionally, there seems to be a good amount of room for me to get better at documentation over the course of the project. There’s a lot to learn, a lot to do, which should indicate that there will be a lot to document. 

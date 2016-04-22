@@ -2,7 +2,7 @@
 layout:     post
 title:      "Project Story Two"
 subtitle:   "Neural Networks and Time Series Data"
-date:       2016-04-021
+date:       2016-04-21
 author:     "David, Patrick, and Philip"
 header-img: "img/post-bg-01.jpg"
 ---

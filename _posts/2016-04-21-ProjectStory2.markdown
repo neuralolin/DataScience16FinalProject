@@ -4,7 +4,7 @@ title:      "Project Story Two"
 subtitle:   "Neural Networks and Time Series Data"
 date:       2016-04-21
 author:     "David, Patrick, and Philip"
-header-img: "img/post-bg-01.jpg"
+header-img: "img/post-bg-04.jpg"
 ---
 
 ## What is a Recurrent Neural Network (RNN)?

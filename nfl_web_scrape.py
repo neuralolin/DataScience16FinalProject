@@ -5,6 +5,17 @@ from pprint import pprint
 import asyncio
 import aiohttp
 import json
+import tqdm
+
+@asyncio.coroutine
+def wait_with_progress(coros):
+    dics = []
+    with tqdm.tqdm(total=len(coros)) as pbar:
+        for coroutine in asyncio.as_completed(coros):
+            dic = yield from coroutine
+            dics.append(dic)
+            pbar.update(1)
+    return dics
 
 @asyncio.coroutine
 def get(*args, **kwargs):
@@ -24,7 +35,6 @@ def process_split_row(dic, team_stats, names, row_num, col_num):
 @asyncio.coroutine
 def process_game(game_url, row_index, week, home_pts, road_pts):
     with (yield from sem):
-        print('processing row %i' % row_index)
         page = yield from get(game_url, compress=True)
     game = BeautifulSoup(page, "lxml")
     team_stats = game.find(
@@ -64,7 +74,8 @@ def process_game(game_url, row_index, week, home_pts, road_pts):
     return game_dict
 
 BASE_URL = 'http://www.pro-football-reference.com'
-years = range(2010, 2016)
+years = list(range(2013, 2016))
+years += list(range(2000, 2010))
 game_db = {}
 
 for year in years:
@@ -90,7 +101,9 @@ for year in years:
         game_url = BASE_URL + cells[3].find("a")['href']
         tasks.append(process_game(game_url, i, week, home_pts, road_pts))
 
-    games = loop.run_until_complete(asyncio.gather(*tasks))
+    #games = loop.run_until_complete(asyncio.gather(*tasks))
+    games = loop.run_until_complete(wait_with_progress(tasks))
+    print(tqdm)
     game_db[year] = games
 
     print("saving year %i" % year)

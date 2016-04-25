@@ -23,9 +23,9 @@ def process_split_row(dic, team_stats, names, row_num, col_num):
 
 @asyncio.coroutine
 def process_game(game_url, row_index, week, home_pts, road_pts):
-    print('processing row %i' % row_index)
     with (yield from sem):
-        page = yield from get(url, compress=True)
+        print('processing row %i' % row_index)
+        page = yield from get(game_url, compress=True)
     game = BeautifulSoup(page, "lxml")
     team_stats = game.find(
         "table", id="team_stats").find_all("tr", recursive=False)
@@ -93,6 +93,13 @@ for year in years:
     games = loop.run_until_complete(asyncio.gather(*tasks))
     game_db[year] = games
 
+    print("saving year %i" % year)
+
+    with open('output_%i.json' % year, 'w') as outfile:
+        json.dump(games, outfile)
+
 with open('output.json', 'w') as outfile:
     json.dump(game_db, outfile)
+
 loop.close()
+

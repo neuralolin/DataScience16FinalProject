@@ -6,6 +6,7 @@ import asyncio
 import aiohttp
 import json
 import tqdm
+import re
 
 @asyncio.coroutine
 def wait_with_progress(coros):
@@ -28,8 +29,8 @@ loop = asyncio.get_event_loop()
 sem = asyncio.Semaphore(5)
 
 def process_split_row(dic, team_stats, names, row_num, col_num):
-    for i, stat in enumerate(team_stats[row_num].contents[col_num].text.
-                             split('-')):
+    for i, stat in enumerate(re.split("-+", team_stats[row_num].
+                             contents[col_num].text)):
         dic[names[i]] = int(stat)
 
 @asyncio.coroutine
@@ -74,8 +75,8 @@ def process_game(game_url, row_index, week, home_pts, road_pts):
     return game_dict
 
 BASE_URL = 'http://www.pro-football-reference.com'
-years = list(range(2013, 2016))
-years += list(range(2000, 2010))
+#years = list(range(2013, 2016))
+years = list(range(2006, 2009))
 game_db = {}
 
 for year in years:

@@ -103,7 +103,6 @@ for year in years:
 
     #games = loop.run_until_complete(asyncio.gather(*tasks))
     games = loop.run_until_complete(wait_with_progress(tasks))
-    print(tqdm)
     game_db[year] = games
 
     print("saving year %i" % year)

@@ -35,6 +35,10 @@ This is a fantastic starting place, and assumes only a basic understanding of li
 
 ##### [02_Conversion_to_RNN](02_Conversion_to_RNN)
 
+* https://iamtrask.github.io/2015/11/15/anyone-can-code-lstm/
+
+Despite the misleading url, here "i am trask" has a created a great writeup on how RNNs work, and how you can implement one in python. He walks you through creating an RNN that learns how to do binary addition. Because we wanted to make sure we were building on what we learned in the previous section, rather than starting from scratch using this walk-through's architecture, we used this walk-through to convert the NN from section 1 into an RNN that learns binary addition!
+
 ##### [03_NN_in_Theano](03_NN_in_Theano)
 
 ##### [04_NN_in_Lasagne](04_NN_in_Lasagne)

@@ -58,4 +58,8 @@ This is an awesome tutorial on a variety of NN Lasagne applications, from simple
 
 ##### [06_LSTM_Keras_Weather](06_LSTM_Keras_Weather)
 
+* http://danielhnyk.cz/predicting-sequences-vectors-keras-using-rnn-lstm/
+
+Here's a walk-through of how to use Keras to build and train a RNN that can predict sequences of data (ie, weather, stock prices, etc.). What we really liked about this article was that it explains exactly how to convert a time-series (with time on your x-axis, something else on your y) into something a Neural Network can learn and predict. In fact, the procedure used in this article to preprocess weather data is nearly identical to how you preprocess any sequential data for RNNs. Check out the article and our repo for an explanation of the process!
+
 ##### [07_LSTM_Keras_NFL](07_LSTM_Keras_NFL)

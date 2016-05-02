@@ -54,9 +54,19 @@ PRINT_FREQ = config['PRINT_FREQ']
 NUM_EPOCHS = config['NUM_EPOCHS']
 BATCH_SIZE = config['BATCH_SIZE']
 
-def gen_data(p, batch_size=BATCH_SIZE, data=in_text, return_target=True):
+def generate_data(p, batch_size=BATCH_SIZE, data=in_text, return_target=True):
     '''
     Produces a semi-redundant batch of training samples from the location 'p' in the provided string (data).
+
+    Inputs: 
+        p (int): Position in the input text to start at
+        batch_size (int): The number of frame shifts to make/training samples to make
+        data (str): The input corpus
+        return_target (boolean): Flag to determine whether to return the target vector
+
+    Returns:
+        x (np array): Input data matrix that takes the shape of (batch_size x SEQ_LENGTH x vocab_size)
+        y (np array): Output data representing one-hot encoding of guessed character
     '''
 
     x = np.zeros((batch_size,SEQ_LENGTH,vocab_size))
@@ -119,16 +129,12 @@ def main(num_epochs=NUM_EPOCHS):
     # Generate probabilities used to generate text from the network given the current state and seed text input
     probs = theano.function([l_in.input_var],network_output,allow_input_downcast=True)
 
-    # The next function generates text given a phrase of length at least SEQ_LENGTH.
-    # The phrase is set using the variable generation_phrase.
-    # The optional input "N" is used to set the number of characters of text to predict. 
-
-    def try_it_out(N=200):
+    def generate_text(N=200):
         '''
         This function uses the user-provided string "generation_phrase" and current state of the RNN generate text.
         The function works in three steps:
         1. It converts the string set in "generation_phrase" (which must be over SEQ_LENGTH characters long) 
-           to encoded format. We use the gen_data function for this. By providing the string and asking for a single batch,
+           to encoded format. We use the generate_data function for this. By providing the string and asking for a single batch,
            we are converting the first SEQ_LENGTH characters into encoded form. 
         2. We then use the LSTM to predict the next character and store it in a (dynamic) list sample_ix. This is done by using the 'probs'
            function which was compiled above. Simply put, given the output, we compute the probabilities of the target and pick the one 
@@ -136,12 +142,6 @@ def main(num_epochs=NUM_EPOCHS):
         3. Once this character has been predicted, we construct a new sequence using all but first characters of the 
            provided string and the predicted character. This sequence is then used to generate yet another character.
            This process continues for "N" characters. 
-        To make this clear, let us again look at a concrete example. 
-        Assume that SEQ_LENGTH = 5 and generation_phrase = "The quick brown fox jumps". 
-        We initially encode the first 5 characters ('T','h','e',' ','q'). The next character is then predicted (as explained in step 2). 
-        Assume that this character was 'J'. We then construct a new sequence using the last 4 (=SEQ_LENGTH-1) characters of the previous
-        sequence ('h','e',' ','q') , and the predicted letter 'J'. This new sequence is then used to compute the next character and 
-        the process continues.
         '''
 
         assert(len(generation_phrase)>=SEQ_LENGTH)
@@ -167,8 +167,8 @@ def main(num_epochs=NUM_EPOCHS):
     logging.info("Seed used for text generation is: " + generation_phrase)
     p = 0
     try:
-        for it in xrange(data_size * num_epochs / BATCH_SIZE):
-            try_it_out() # Generate text using the p^th character as the start. 
+        for i in xrange(data_size * num_epochs / BATCH_SIZE):
+            generate_text() # Generate text using the p^th character as the start. 
             
             avg_cost = 0;
             for _ in range(PRINT_FREQ):
@@ -182,7 +182,7 @@ def main(num_epochs=NUM_EPOCHS):
                 
 
                 avg_cost += train(x, y)
-            logging.info("Epoch {} average loss = {}".format(it*1.0*PRINT_FREQ/data_size*BATCH_SIZE, avg_cost / PRINT_FREQ))
+            logging.info("Epoch {} average loss = {}".format(i*1.0*PRINT_FREQ/data_size*BATCH_SIZE, avg_cost / PRINT_FREQ))
                     
     except KeyboardInterrupt:
         pass

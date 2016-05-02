@@ -24,22 +24,29 @@ We also have a [website](http://neuralolin.github.io/DataScience16FinalProject/)
 
 ## Resources, you say
 
-Here's a succinct list of resources we used, in the (rough) order we used them. If all you want to learn about Neural Networks from smart people on the internet, reading through these should do the trick.
+	Here's a succinct list of resources we used, in the (rough) order we used them. If all you want to learn about Neural Networks from smart people on the internet, reading through these should do the trick.
 
 ##### [01_Implementing_a_NN](01_Implementing_a_NN)
 
 * https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU
 * https://github.com/stephencwelch/Neural-Networks-Demystified
 
-This is a fantastic starting place, and assumes only a basic understanding of linear algebra and python. You will walk through implementing your very own neural network in python, complete with forward and back propagation. You will also walk through the math involved in back-prop, like gradients, gradient descent, and cost functions.
+	This is a fantastic starting place, and assumes only a basic understanding of linear algebra and python. You will walk through implementing your very own neural network in python, complete with forward and back propagation. You will also walk through the math involved in back-prop, like gradients, gradient descent, and cost functions.
 
 ##### [02_Conversion_to_RNN](02_Conversion_to_RNN)
 
 * https://iamtrask.github.io/2015/11/15/anyone-can-code-lstm/
 
-Despite the misleading url, here "i am trask" has a created a great writeup on how RNNs work, and how you can implement one in python. He walks you through creating an RNN that learns how to do binary addition. Because we wanted to make sure we were building on what we learned in the previous section, rather than starting from scratch using this walk-through's architecture, we used this walk-through to convert the NN from section 1 into an RNN that learns binary addition!
+	Despite the misleading url, here "i am trask" has a created a great writeup on how RNNs work, and how you can implement one in python. He walks you through creating an RNN that learns how to do binary addition. Because we wanted to make sure we were building on what we learned in the previous section, rather than starting from scratch using this walk-through's architecture, we used this walk-through to convert the NN from section 1 into an RNN that learns binary addition!
 
 ##### [03_NN_in_Theano](03_NN_in_Theano)
+
+* https://github.com/Newmu/Theano-Tutorials
+* http://outlace.com/Beginner-Tutorial-Theano/
+
+	These two resources are great places to start out when getting a grasp for the somewhat esoteric conventions Theano imposes. Alec Radford (Olin shoutout!) does a great job in introducing concepts central to Theano that give a great background to start from. Starting from a 12 line implemention of a multiplication function in Theano, Alec goes through all the way to inplementing a modern convolutional image processing network over the course of 5 examples. Some of the more well-written, clever, and clean Theano code we've come across during this project. 
+
+	The second resource here is a good walkthrough to get up to speed in Theano syntax, going from start to finish in implementing a super simple feedforward NN that acts as an XOR gate. To see a full, working example that's easy to understand, check this one out.
 
 ##### [04_NN_in_Lasagne](04_NN_in_Lasagne)
 

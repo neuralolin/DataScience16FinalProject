@@ -26,16 +26,21 @@ We also have a [website](http://neuralolin.github.io/DataScience16FinalProject/)
 
 Here's a succinct list of resources we used, in the (rough) order we used them. If all you want to learn about Neural Networks from smart people on the internet, reading through these should do the trick.
 
-### [01_Implementing_a_NN](01_Implementing_a_NN)
+##### [01_Implementing_a_NN](01_Implementing_a_NN)
 
-### [02_Conversion_to_RNN](02_Conversion_to_RNN)
+* https://www.youtube.com/playlist?list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU
+* https://github.com/stephencwelch/Neural-Networks-Demystified
 
-### [03_NN_in_Theano](03_NN_in_Theano)
+This is a fantastic starting place, and assumes only a basic understanding of linear algebra and python. You will walk through implementing your very own neural network in python, complete with forward and back propagation. You will also walk through the math involved in back-prop, like gradients, gradient descent, and cost functions.
 
-### [04_NN_in_Lasagne](04_NN_in_Lasagne)
+##### [02_Conversion_to_RNN](02_Conversion_to_RNN)
 
-### [05_LSTM_Lasagne_Text_gen](05_LSTM_Lasagne_Text_gen)
+##### [03_NN_in_Theano](03_NN_in_Theano)
 
-### [06_LSTM_Keras_Weather](06_LSTM_Keras_Weather)
+##### [04_NN_in_Lasagne](04_NN_in_Lasagne)
 
-### [07_LSTM_Keras_NFL](07_LSTM_Keras_NFL)
+##### [05_LSTM_Lasagne_Text_gen](05_LSTM_Lasagne_Text_gen)
+
+##### [06_LSTM_Keras_Weather](06_LSTM_Keras_Weather)
+
+##### [07_LSTM_Keras_NFL](07_LSTM_Keras_NFL)

@@ -44,7 +44,7 @@ We also have a [website](http://neuralolin.github.io/DataScience16FinalProject/)
 * https://github.com/Newmu/Theano-Tutorials
 * http://outlace.com/Beginner-Tutorial-Theano/
 
-	These two resources are great places to start out when getting a grasp for the somewhat esoteric conventions Theano imposes. Alec Radford (Olin shoutout!) does a great job in introducing concepts central to Theano that give a great background to start from. Starting from a 12 line implemention of a multiplication function in Theano, Alec goes through all the way to inplementing a modern convolutional image processing network over the course of 5 examples. Some of the more well-written, clever, and clean Theano code we've come across during this project. 
+	These two resources are great places to start out when getting a grasp for the somewhat esoteric conventions Theano imposes. Alec Radford (Olin shoutout!) does a great job in introducing concepts central to Theano that give a great background to start from. Starting from a 12 line implemention of a multiplication function in Theano, Alec goes through all the way to inplementing a modern convolutional image processing network over the course of 5 examples. Some of the more well-written, clever, and clean Theano code we've come across during this project.
 
 	The second resource here is a good walkthrough to get up to speed in Theano syntax, going from start to finish in implementing a super simple feedforward NN that acts as an XOR gate. To see a full, working example that's easy to understand, check this one out.
 
@@ -57,5 +57,9 @@ This is an awesome tutorial on a variety of NN Lasagne applications, from simple
 ##### [05_LSTM_Lasagne_Text_gen](05_LSTM_Lasagne_Text_gen)
 
 ##### [06_LSTM_Keras_Weather](06_LSTM_Keras_Weather)
+
+* http://danielhnyk.cz/predicting-sequences-vectors-keras-using-rnn-lstm/
+
+Here's a walk-through of how to use Keras to build and train a RNN that can predict sequences of data (ie, weather, stock prices, etc.). One downside to this article is that it is based on a previous version of Keras, and some of the syntax used  What we really liked about this article was that it explains exactly how to convert a time-series (with time on your x-axis, something else on your y) into something a Neural Network can learn and predict. In fact, the procedure used in this article to preprocess weather data is nearly identical to how you preprocess any sequential data for RNNs. Check out the article and our repo for an explanation of the process!
 
 ##### [07_LSTM_Keras_NFL](07_LSTM_Keras_NFL)

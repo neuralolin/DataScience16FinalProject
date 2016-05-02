@@ -43,6 +43,10 @@ Despite the misleading url, here "i am trask" has a created a great writeup on h
 
 ##### [04_NN_in_Lasagne](04_NN_in_Lasagne)
 
+* https://github.com/craffel/Lasagne-tutorial/blob/master/examples/tutorial.ipynb
+
+This is an awesome tutorial on a variety of NN Lasagne applications, from simple feed-forward NNs to LSTM and Convolutional layers.
+
 ##### [05_LSTM_Lasagne_Text_gen](05_LSTM_Lasagne_Text_gen)
 
 ##### [06_LSTM_Keras_Weather](06_LSTM_Keras_Weather)

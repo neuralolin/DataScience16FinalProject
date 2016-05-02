@@ -18,4 +18,21 @@ A Neural Network is a machine learning model roughly based on the makeup of the 
 
 The connections between the neurons are often called \textbf{synapses}. Each synapse has an associated value which is the coefficient in the linear combination that produces the neurons in the next layer. The associated values of all the synapses between two layers comprise a \textbf{weight matrix}.
 
+\section{Training a Neural Network}
+
+Making predictions with NNs is great, but it's not worth much unless we can improve our predictions. Gradient descent to the rescue!
+
+\subsection{Gradient Descent and Neural Networks}
+With random weights, a NN is pretty terrible at making predictions. To improve our model, we first need to quantify exactly how wrong our predictions are. We'll do this with a cost function. A cost function allows us to express exactly how wrong or "costly" our models is, given our examples.
+
+A common way to compute an overall cost is to take each error value, square it, and sum the values. 
+
+\begin{equation}
+	J = \Sigma \frac{1}{2}(y-y_{i})^{2}
+\end{equation}
+
+This cost is a function of two things - the input data, and the weights on the synapses. We can't change the data, so we'll improve the accuracy by modifying the weights!
+
+Conceptually, what we'll be doing is computing derivative of the cost with respect to each weight matrix. We'll use these derivatives to compile a gradient, which we can then use to change the weights incrementally as our network improves!
+
 \end{document}

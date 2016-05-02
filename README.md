@@ -1,7 +1,7 @@
 # DataScience16FinalProject
 This is the repo for Patrick, David, and Philip's work on the final Data Science project, Spring 2016.
 
-### About this Repository
+## Navigating this Repository
 This repository contains a series of python scripts, iPython notebooks, and project documentation tracking our progress through learning about neural networks. See below for an overview of the different stages (organized into separate directories):
 
 1. [01_Implementing_a_NN](01_Implementing_a_NN) - Basic implementation of a feedforward NN
@@ -18,9 +18,11 @@ This repository contains a series of python scripts, iPython notebooks, and proj
 
 7. [07_LSTM_Keras_NFL](07_LSTM_Keras_NFL) - Implementation of an LSTM to predict NFL football game outcomes using Keras
 
+## Our Website
 
-Website can be found at:
-http://neuralolin.github.io/DataScience16FinalProject/
+We also have a [website](http://neuralolin.github.io/DataScience16FinalProject/) where we wrote blog posts documenting all the stuff we've done throughout this project in long-form. We also linked to many of the resources we used throughout our blog posts. However, if sifting through all our gibberish sounds like too much of a chore, and you really just want to learn about Neural Networks from smarter people than us...
+
+<!-- ## Resources, you say
 
 # Table of Contents
 1. [Example](#example)
@@ -29,4 +31,4 @@ http://neuralolin.github.io/DataScience16FinalProject/
 
 ## Example
 ## Example2
-## Third Example
+## Third Example -->

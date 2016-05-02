@@ -56,6 +56,13 @@ This is an awesome tutorial on a variety of NN Lasagne applications, from simple
 
 ##### [05_LSTM_Lasagne_Text_gen](05_LSTM_Lasagne_Text_gen)
 
+* http://karpathy.github.io/2015/05/21/rnn-effectiveness/
+* https://github.com/fchollet/keras/blob/master/examples/lstm_text_generation.py
+
+	The first resource here is a blog post by a very knowledgable guy named Andrew Karpathy, and wow, is he engaging. It offers a fun, interesting, and very helpful introduction into how RNNs work with a great-in depth look at what goes on inside during the training process. This was a great resource as we developed a character-level recurrent network, as Karpathy offers a lot of great advice on architecture and data representation.
+
+	The second resource is an implementation of what we built, but in Keras! We used this and borrowed a lot to inform decisions about the network hyperparameters (e.g. shape, size, etc.). 
+
 ##### [06_LSTM_Keras_Weather](06_LSTM_Keras_Weather)
 
 * http://danielhnyk.cz/predicting-sequences-vectors-keras-using-rnn-lstm/

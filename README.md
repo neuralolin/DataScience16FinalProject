@@ -123,6 +123,10 @@ Just the Lasagne docs.
 
 ##### [05_LSTM_Keras_Weather](05_LSTM_Keras_Weather)
 
+* http://keras.io/
+
+And the Keras ones.
+
 * http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 
 This was a really, really informative read. It contains a step-by-step walkthrough about how a LSTM has "memory." If we were to recommend one article when it comes to understanding the underlying math of LSTMs, this would be it.
@@ -130,10 +134,6 @@ This was a really, really informative read. It contains a step-by-step walkthrou
 * https://www.youtube.com/watch?v=56TYLaQN4N8
 
 A great lecture from the CS department at Oxford about RNNs and LSTMs. This gets pretty crazy with math and once he starts talking about Hessians we got lost. Up until then though, very informative. If you're good at or enjoy attempting to learn math, you'll enjoy this.
-
-* http://keras.io/
-
-And the Keras ones.
 
 * https://datamarket.com/data/list/?q=provider%3Atsdl
 

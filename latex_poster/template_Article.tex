@@ -57,6 +57,7 @@ This cost is a function of two things - the input data, and the weights on the s
 
 Conceptually, what we'll be doing is computing derivative of the cost with respect to each weight matrix. We'll use these derivatives to compile a gradient, which we can then use to change the weights incrementally as our network improves!
 
+
 \subsection{Applying Gradient Descent to Train a Network}
 Let's get to applying gradient descent to improve and train a neural network. Assuming we have a network with one hidden layer and according weight matrices $W_1$ and $W_2$. 
 
@@ -133,5 +134,17 @@ Where:
 (W^{(2)})^{T}
 f^\prime(z^{(2)})
 \end{equation}
+
+\section{LSTMs}
+
+NNs have another fascinating use case. They are also able to learn patterns in sequential data. A neural network that learns sequential data is known as a \textbf{Recurrent Neural Network}. The only difference is that at each time step, the hidden layer receives the hidden layer from the previous timestep as an input.
+
+  LSTM3-SimpleRNN.png
+A downside to this basic implementation is the fact that the network quickly forgets information from several timesteps ago. To overcome this, many people use a special implementation of an RNN known as an LSTM (long short-term memory) network.
+
+  LSTM3-var-GRU.png
+  LSTM2-notation.png
+  
+LSTMs rely on a \textbf{cell state}: the horizontal line running through each timestep. This line is like a "conveyor belt," carrying information across timesteps. The information that is stored or changed on the cell state is dictated by a forget gate. In short, the network learns what to remember, and what to forget.
 
 \end{document}

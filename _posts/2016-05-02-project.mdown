@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "End of Project"
-subtitle:   "Team Neural Olin"
+subtitle:   "Documentation and More!"
 date:       2016-05-03
 author:     "David, Patrick, and Philip"
 header-img: "img/post-bg-03.jpg"
@@ -11,3 +11,5 @@ header-img: "img/post-bg-03.jpg"
 ## We is done!
 
 All our documentation is available in our git repo [here](https://github.com/neuralolin/DataScience16FinalProject). Follow the *README* for an index and organization.
+
+Our poster is also available for viewing [here]()

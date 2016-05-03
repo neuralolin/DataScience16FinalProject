@@ -1,10 +1,11 @@
 \documentclass[]{article}
 
 \usepackage{amsmath}
+\usepackage[margin=1in, paperwidth=8.5in, paperheight=11in]{geometry}
 
 %opening
-\title{}
-\author{}
+\title{Neural Networks: An Exploration}
+\author{Patrick Huston, David Abrahams, Philip Seger}
 
 \begin{document}
 
@@ -55,5 +56,82 @@ A common way to compute an overall cost is to take each error value, square it, 
 This cost is a function of two things - the input data, and the weights on the synapses. We can't change the data, so we'll improve the accuracy by modifying the weights!
 
 Conceptually, what we'll be doing is computing derivative of the cost with respect to each weight matrix. We'll use these derivatives to compile a gradient, which we can then use to change the weights incrementally as our network improves!
+
+\subsection{Applying Gradient Descent to Train a Network}
+Let's get to applying gradient descent to improve and train a neural network. Assuming we have a network with one hidden layer and according weight matrices $W_1$ and $W_2$. 
+
+We need some way to compute $\frac{\partial J}{\partial W}$. Because we have two weight matrices, we'll have to split the computations up into $\frac{\partial J}{\partial W^{(2)}}$ and $\frac{\partial J}{\partial W^{(1)}}$ - the partial derivatives of the cost $J$ with respect to the weight matrices $W_1$ and $W_2$. For ease, we'll start with $\frac{\partial J}{\partial W^{(2)}}$. 
+
+We'll start with this expression - 
+
+\begin{equation}
+	\frac{\partial J}{\partial W^{(2)}} = \frac{\partial \sum \frac{1}{2}(y-\hat{y})^2}{\partial W^{(2)}}
+\end{equation}
+
+Taking the derivative of this expression (temporarily setting aside the summation) simply involves a lot of chain rule. Backpropagation - don't stop doing the chain rule, ever. 
+
+The first step looks like this:
+
+\begin{equation}
+\frac{\partial J}{\partial W^{(2)}} = -(y-\hat{y}) \frac{\partial \hat{y}}{\partial W^{(2)}}
+\end{equation}
+
+Next, we'll expand the derivative of $\hat{y}$ with respect to $W_2$. Again, the chain rule is applied.
+
+\begin{equation}
+\frac{\partial J}{\partial W^{(2)}} = 
+-(y-\hat{y})
+\frac{\partial \hat{y}}{\partial z^{(3)}}  
+\frac{\partial z^{(3)}}{\partial W^{(2)}}
+\end{equation}
+
+To find the rate of change of $\hat{y}$ with respect to $z_3$, we need to differentiate the activation function with respect to $z$. Once we compute that, we can now replace $\frac{\partial \hat{y}}{\partial z^{(3)}}$ with $f^\prime(z^{3})$
+
+\begin{equation}
+\frac{\partial z^{(3)}}{\partial W^{(2)}}= 
+-(y-\hat{y}) f^\prime(z^{(3)}) \frac{\partial z^{(3)}}{\partial W^{(2)}}
+\end{equation}
+
+Finally, we need to investigate the relationship between $z^{(3)}$ and $W^({2})$. If we take a look at a previous equation describing the derivation of the activation, we get $z^{(3)} = a^{(2)}W^{(2)}$. It's just a linear relationship!
+
+A way to think about what's going on here is that we're "backpropagating" the error to each weight by multiplying the activity on each synapses that contribute more to the error will have larger activations, and yield larger dJ/dW2 values, and those weights will be changed more when we perform gradient descent. 
+
+Applying this, we get to the final equations:
+
+\begin{equation}
+\frac{\partial J}{\partial W^{(2)}} = 
+(a^{(2)})^T\delta^{(3)}\tag{6}
+\end{equation}
+
+where
+
+\begin{equation}
+\delta^{(3)} = -(y-\hat{y}) f^\prime(z^{(3)}) 
+\end{equation}
+
+We have one more derivative to compute - dJ/dW1. The process for this derivative starts the same as described above, but with an additional application of the chain rule to backpropagate error through each layer. The final equation comes out as: 
+
+\begin{equation}
+\frac{\partial J}{\partial W^{(1)}} = 
+X^{T}
+\delta^{(3)} 
+(W^{(2)})^{T}
+f^\prime(z^{(2)})
+\end{equation}
+
+Or: 
+
+\begin{equation}
+\frac{\partial J}{\partial W^{(1)}} = 
+X^{T}\delta^{(2)} \tag{7}
+\end{equation}
+
+Where: 
+
+\begin{equation}
+\delta^{(2)} = \delta^{(3)} 
+(W^{(2)})^{T}
+f^\prime(z^{(2)})
+\end{equation}
 
 \end{document}

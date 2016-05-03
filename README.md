@@ -12,9 +12,9 @@ This repository contains a series of python scripts, iPython notebooks, and proj
 
 4. [04_NN_in_Lasagne](04_NN_in_Lasagne) - Exploring Lasagne and using it to create a basic NN
 
-5. [05_LSTM_Lasagne_Text_gen](05_LSTM_Lasagne_Text_gen) - Implementation of an LSTM for NLP and text generation in Lasagne
+5. [06_LSTM_Lasagne_Text_gen](06_LSTM_Lasagne_Text_gen) - Implementation of an LSTM for NLP and text generation in Lasagne
 
-6. [06_LSTM_Keras_Weather](06_LSTM_Keras_Weather) - Implementation of an LSTM to predict weather patterns using Keras
+6. [05_LSTM_Keras_Weather](05_LSTM_Keras_Weather) - Implementation of an LSTM to predict weather patterns using Keras
 
 7. [07_LSTM_Keras_NFL](07_LSTM_Keras_NFL) - Implementation of an LSTM to predict NFL football game outcomes using Keras
 
@@ -24,7 +24,7 @@ We also have a [website](http://neuralolin.github.io/DataScience16FinalProject/)
 
 ## Resources, you say
 
-	Here's a succinct list of resources we used, in the (rough) order we used them. If all you want to learn about Neural Networks from smart people on the internet, reading through these should do the trick.
+Here's a succinct list of resources we used, in the (rough) order we used them. If all you want to learn about Neural Networks from smart people on the internet, reading through these should do the trick.
 
 ##### [01_Implementing_a_NN](01_Implementing_a_NN)
 
@@ -52,21 +52,95 @@ We also have a [website](http://neuralolin.github.io/DataScience16FinalProject/)
 
 * https://github.com/craffel/Lasagne-tutorial/blob/master/examples/tutorial.ipynb
 
-This is an awesome tutorial on a variety of NN Lasagne applications, from simple feed-forward NNs to LSTM and Convolutional layers.
+	This is an awesome tutorial on a variety of NN Lasagne applications, from simple feed-forward NNs to LSTM and Convolutional layers.
 
-##### [05_LSTM_Lasagne_Text_gen](05_LSTM_Lasagne_Text_gen)
+##### [05_LSTM_Keras_Weather](05_LSTM_Keras_Weather)
+
+* http://danielhnyk.cz/predicting-sequences-vectors-keras-using-rnn-lstm/
+
+	Here's a walk-through of how to use Keras to build and train a RNN that can predict sequences of data (ie, weather, stock prices, etc.). One downside to this article is that it is based on a previous version of Keras, and some of the syntax used won't work on the newest distributions of Keras. However, our notebook has the new syntax, so you can use our code as an example!
+
+	What we really liked about this article was that it explains exactly how to convert a time-series (with time on your x-axis, something else on your y) into something a Neural Network can learn and predict. In fact, the procedure used in this article to preprocess weather data is nearly identical to how you preprocess any sequential data for RNNs. Check out the article and our repo for an explanation of the process!
+
+##### [06_LSTM_Lasagne_Text_gen](06_LSTM_Lasagne_Text_gen)
 
 * http://karpathy.github.io/2015/05/21/rnn-effectiveness/
 * https://github.com/fchollet/keras/blob/master/examples/lstm_text_generation.py
 
 	The first resource here is a blog post by a very knowledgable guy named Andrew Karpathy, and wow, is he engaging. It offers a fun, interesting, and very helpful introduction into how RNNs work with a great-in depth look at what goes on inside during the training process. This was a great resource as we developed a character-level recurrent network, as Karpathy offers a lot of great advice on architecture and data representation.
 
-	The second resource is an implementation of what we built, but in Keras! We used this and borrowed a lot to inform decisions about the network hyperparameters (e.g. shape, size, etc.). 
-
-##### [06_LSTM_Keras_Weather](06_LSTM_Keras_Weather)
-
-* http://danielhnyk.cz/predicting-sequences-vectors-keras-using-rnn-lstm/
-
-Here's a walk-through of how to use Keras to build and train a RNN that can predict sequences of data (ie, weather, stock prices, etc.). One downside to this article is that it is based on a previous version of Keras, and some of the syntax used  What we really liked about this article was that it explains exactly how to convert a time-series (with time on your x-axis, something else on your y) into something a Neural Network can learn and predict. In fact, the procedure used in this article to preprocess weather data is nearly identical to how you preprocess any sequential data for RNNs. Check out the article and our repo for an explanation of the process!
+	The second resource is an implementation of what we built, but in Keras! We used this and borrowed a lot to inform decisions about the network hyperparameters (e.g. shape, size, etc.).
 
 ##### [07_LSTM_Keras_NFL](07_LSTM_Keras_NFL)
+
+## Supplemental Resources
+
+If all of the above resources weren't enough for you, have no fear. We've prowled the internet and came up with even more things you can (and we did) read. These definitely helped us out with understanding Neural Networks from a more technical perspective. Here they are, sorted into which phase of our project they help most with:
+
+##### [01_Implementing_a_NN](01_Implementing_a_NN)
+
+* ftp://ftp.sas.com/pub/neural/FAQ2.html#A_std
+
+Holy cow was this useful. It's basically a Neural Network FAQ. Almost every question we had about NNs was clarified in this. It contains answers to questions like, "Should I normalize/standardize/rescale the data?" and "What is a softmax activation function?" and "What is the curse of dimensionality?"
+
+* http://iamtrask.github.io/2015/07/12/basic-python-network/
+
+This is a good precursor to the "i am trask" RNN implementation.
+
+* https://moalquraishi.wordpress.com/2014/05/25/what-does-a-neural-network-actually-do/
+
+A blog post on what a NN actually does, and some exploration of the underlying relationships/math.
+
+* https://medium.com/learning-new-stuff/how-to-learn-neural-networks-758b78f2736e#.90xgkk6wi
+
+Another basic NN implementation. Probably don't need to read this if you've gone through all the other things, since its basically just another framing.
+
+* http://karpathy.github.io/neuralnets/
+
+"Hacker's guide to Neural Networks." It's just that, with an in-depth exploration of NN from the perspective of circuits and the code. Very code heavy.
+
+* http://stats.stackexchange.com/questions/181/how-to-choose-the-number-of-hidden-layers-and-nodes-in-a-feedforward-neural-netw
+
+A discussion on how many hidden layers and nodes to use.
+
+##### [02_Conversion_to_RNN](02_Conversion_to_RNN)
+
+* http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/
+
+A tutorial about recurrent NNs and where they can be implemented, and some visualizations to help show the architecture.
+
+##### [03_NN_in_Theano](03_NN_in_Theano)
+
+* http://deeplearning.net/tutorial/
+
+A set of Theano tutorials.
+
+##### [04_NN_in_Lasagne](04_NN_in_Lasagne)
+
+* http://lasagne.readthedocs.io/en/latest/user/layers.html#creating-a-layer
+
+Just the Lasagne docs.
+
+##### [05_LSTM_Keras_Weather](05_LSTM_Keras_Weather)
+
+* http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+
+This was a really, really informative read. It contains a step-by-step walkthrough about how a LSTM has "memory." If we were to recommend one article when it comes to understanding the underlying math of LSTMs, this would be it.
+
+* https://www.youtube.com/watch?v=56TYLaQN4N8
+
+A great lecture from the CS department at Oxford about RNNs and LSTMs. This gets pretty crazy with math and once he starts talking about Hessians we got lost. Up until then though, very informative. If you're good at or enjoy attempting to learn math, you'll enjoy this.
+
+* http://keras.io/
+
+And the Keras ones.
+
+* https://datamarket.com/data/list/?q=provider%3Atsdl
+
+A huge databank of time series data sets. It's where we got the weather data from. Great for just diving into RNNs.
+
+##### [06_LSTM_Lasagne_Text_gen](06_LSTM_Lasagne_Text_gen)
+
+* https://github.com/Lasagne/Recipes/blob/master/examples/lstm_text_generation.py
+
+A Lasagne LSTM recipe.

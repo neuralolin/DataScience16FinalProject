@@ -68,4 +68,10 @@ A downside to this basic implementation is the fact that the network quickly for
   
 LSTMs rely on a \textbf{cell state}: the horizontal line running through each timestep. This line is like a "conveyor belt," carrying information across timesteps. The information that is stored or changed on the cell state is dictated by a forget gate. In short, the network learns what to remember, and what to forget.
 
+\section{Implementations}
+
+\subsection{Predicting the Weather}
+
+One of the neural net implementations we did was training and then running a time-series of daily weather data through a LSTM. Our results were okay (better than a simple baseline model, but not much better). Here's a snapshot of our model's output, after being trained on 14-day sliding windows of weather data.
+
 \end{document}

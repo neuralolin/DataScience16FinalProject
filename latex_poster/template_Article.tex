@@ -29,7 +29,15 @@ Above we have simple neural network, which takes in two inputs (features), and r
 	\hat{y} = z_2 W_2
 \end{gather}
 
-And we're done! This is now a neural net capable of making predictions.
+The hyperbolic tangent function scales each activation from -1 to 1. We're done! This is now a neural net capable of making predictions.
+
+\section{Activation functions}
+
+Perhaps at this point you have astutely observed that currently our Neural Network is basically just a linear regression model, since the output is a linear combination of the inputs. It's time to introduce one of the most important features of neural networks: \textbf{nonlinearity}. Most neural network layers apply a activation function to their activations before passing on their output to the next layer. This transformed activation is known as the layer \textbf{activity}. All we have to do to make our network capable of predicting nonlinear relationships is update our equations:
+
+\begin{equation}
+	a_2 = \tanh (z_2) = \tanh (XW_1)
+\end{equation}
 
 \section{Training a Neural Network}
 

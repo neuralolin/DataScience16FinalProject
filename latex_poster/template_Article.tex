@@ -1,5 +1,7 @@
 \documentclass[]{article}
 
+\usepackage{amsmath}
+
 %opening
 \title{}
 \author{}
@@ -18,6 +20,17 @@ A Neural Network is a machine learning model roughly based on the makeup of the 
 
 The connections between the neurons are often called \textbf{synapses}. Each synapse has an associated value which is the coefficient in the linear combination that produces the neurons in the next layer. The associated values of all the synapses between two layers comprise a \textbf{weight matrix}.
 
+\section{Making Predictions}
+
+Above we have simple neural network, which takes in two inputs (features), and returns one output (prediction). Let's assume we have 3 samples. This means X is a 3x2 matrix. $W_1$ is a matrix of synapse coefficients. We can see that there are four synapses between the first two layers. $W_1$ is a 2x2 matrix, where each row corresponds to the synapses coming out of one of the input neurons. In this neural net:
+
+\begin{gather}
+	z_2 = X W_1\\
+	\hat{y} = z_2 W_2
+\end{gather}
+
+And we're done! This is now a neural net capable of making predictions.
+
 \section{Training a Neural Network}
 
 Making predictions with NNs is great, but it's not worth much unless we can improve our predictions. Gradient descent to the rescue!
@@ -28,7 +41,7 @@ With random weights, a NN is pretty terrible at making predictions. To improve o
 A common way to compute an overall cost is to take each error value, square it, and sum the values. 
 
 \begin{equation}
-	J = \Sigma \frac{1}{2}(y-y_{i})^{2}
+	J = \Sigma \frac{1}{2}(y- \hat{y})^{2}
 \end{equation}
 
 This cost is a function of two things - the input data, and the weights on the synapses. We can't change the data, so we'll improve the accuracy by modifying the weights!

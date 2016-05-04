@@ -25,10 +25,10 @@ The connections between the neurons are often called \textbf{synapses}. Each syn
 
 Above we have simple neural network, which takes in two inputs (features), and returns one output (prediction). Let's assume we have 3 samples. This means X is a 3x2 matrix. $W_1$ is a matrix of synapse coefficients. We can see that there are four synapses between the first two layers. $W_1$ is a 2x2 matrix, where each row corresponds to the synapses coming out of one of the input neurons. In this neural net:
 
-\begin{gather}
-	z_2 = X W_1\\
-	\hat{y} = z_2 W_2
-\end{gather}
+\begin{align}
+	z_2 &= X W_1\\
+	\hat{y} &= z_2 W_2
+\end{align}
 
 The hyperbolic tangent function scales each activation from -1 to 1. We're done! This is now a neural net capable of making predictions.
 
@@ -36,9 +36,10 @@ The hyperbolic tangent function scales each activation from -1 to 1. We're done!
 
 Perhaps at this point you have astutely observed that currently our Neural Network is basically just a linear regression model, since the output is a linear combination of the inputs. It's time to introduce one of the most important features of neural networks: \textbf{nonlinearity}. Most neural network layers apply a activation function to their activations before passing on their output to the next layer. This transformed activation is known as the layer \textbf{activity}. All we have to do to make our network capable of predicting nonlinear relationships is update our equations:
 
-\begin{equation}
-	a_2 = \tanh (z_2) = \tanh (XW_1)
-\end{equation}
+\begin{align}
+	a_2 &= \tanh (z_2) \\
+	\hat{y} &= a_2 W_2
+\end{align}
 
 \section{Training a Neural Network}
 

@@ -18,6 +18,10 @@ This repository contains a series of python scripts, iPython notebooks, and proj
 
 7. [07_LSTM_Keras_NFL](07_LSTM_Keras_NFL) - Implementation of an LSTM to predict NFL football game outcomes using Keras
 
+## Our Final Poster
+
+[This](final_poster.pdf) is the final poster we demoed. We also created a [PDF writeup](poster_writeup.pdf) of the core content from the poster, with some edits and improvements to be more readable!
+
 ## Our Website
 
 We also have a [website](http://neuralolin.github.io/DataScience16FinalProject/) where we wrote blog posts documenting all the stuff we've done throughout this project in long-form. We also linked to many of the resources we used throughout our blog posts. However, if sifting through all our gibberish sounds like too much of a chore, and you really just want to learn about Neural Networks from smarter people than us...

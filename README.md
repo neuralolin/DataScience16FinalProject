@@ -77,6 +77,8 @@ Here's a succinct list of resources we used, in the (rough) order we used them. 
 
 ##### [07_LSTM_Keras_NFL](07_LSTM_Keras_NFL)
 
+We were planning on trying to run an LSTM on historical NFL data so that our NN could learn which teams are "good" and "bad" based on previous performance, and predict a winner and margin of victory. Alas, we ran out of time. This will be completed in the future.
+
 ## Supplemental Resources
 
 If all of the above resources weren't enough for you, have no fear. We've prowled the internet and came up with even more things you can (and we did) read. These definitely helped us out with understanding Neural Networks from a more technical perspective. Here they are, sorted into which phase of our project they help most with:

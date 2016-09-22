@@ -31,7 +31,7 @@ except Exception as e:
     print("A sample txt file can be downloaded from https://s3.amazonaws.com/text-datasets/nietzsche.txt")
     raise IOError('Unable to Read Text')
 
-generation_phrase = "The quick brown fox jumps" # Used as seed to generate text.
+generation_phrase = "There once was a boy who " # Used as seed to generate text.
 
 # Loads the text file and creates dictionaries to 
 # encode characters into a vector-space representation
@@ -146,7 +146,7 @@ def main(num_epochs=NUM_EPOCHS):
 
         assert(len(generation_phrase)>=SEQ_LENGTH)
         sample_ix = []
-        x,_ = gen_data(len(generation_phrase)-SEQ_LENGTH, 1, generation_phrase,0)
+        x,_ = generate_data(len(generation_phrase)-SEQ_LENGTH, 1, generation_phrase,0)
 
         for i in range(N):
             # Pick the character that got assigned the highest probability
@@ -172,7 +172,7 @@ def main(num_epochs=NUM_EPOCHS):
             
             avg_cost = 0;
             for _ in range(PRINT_FREQ):
-                x,y = gen_data(p)
+                x,y = generate_data(p)
                 
                 #print(p)
                 p += SEQ_LENGTH + BATCH_SIZE - 1 
